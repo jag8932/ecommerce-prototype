@@ -1,3 +1,6 @@
+<body>
+<script src="js/products.js"></script>
+</body>
 <footer>
 <section id="left-footer">
     <h4>Links</h4>

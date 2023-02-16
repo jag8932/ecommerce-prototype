@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
                 $fileDestination = '../uploads/'.$uniqueName;
                 move_uploaded_file($fileTmpName, $fileDestination);
                 createProduct($fileDestination);
-                header("Location: ../index.php?product-created");
+                header("Location: ../index.php?product-created&$fileDestination");
             }
         } else {
             echo "There was an error uploading your file.";
@@ -38,6 +38,7 @@ if (isset($_POST["submit"])) {
     $name = mysqli_real_escape_string($conn, $_POST['prodName']) ;
     $tags = mysqli_real_escape_string($conn, $_POST['tags']);
     $description = mysqli_real_escape_string($conn, $_POST['prodDesc']);
+    
 
     echo $fileTmpName;
 }

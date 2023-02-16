@@ -16,6 +16,7 @@
     <a id='#logo' href='./index.php'>Home</a>
     <div class='spacer'></div>
     <?php 
+    // Greets user
     session_start();
     if (isset($_SESSION["firstname"])) { 
         $name = $_SESSION["firstname"];

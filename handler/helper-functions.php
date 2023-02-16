@@ -34,7 +34,7 @@ function createUser($conn, $first, $last,$username, $email, $pwd) {
         header("Location: ../signup.php?signup=stmtfailed");
         exit();
     }
-    echo $stmt->prepare($sql); 
+   // echo $stmt->prepare($sql); 
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
     // Uses prepared statements for security
     mysqli_stmt_bind_param($stmt, "sssss", $first, $last, $email, $username, $hashedPwd);
@@ -43,6 +43,11 @@ function createUser($conn, $first, $last,$username, $email, $pwd) {
     header("Location: ../login.php?signup=success"); 
     exit();
     }
+
+// Saves product to database
+function createProduct($imgPath) {
+    echo $imgPath;
+}
 
 function loginUser($conn, $user, $password) {
     $userExists = checkUserExists($conn, $user, $user);
