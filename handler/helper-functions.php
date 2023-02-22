@@ -44,9 +44,21 @@ function createUser($conn, $first, $last,$username, $email, $pwd) {
     exit();
     }
 
-// Saves product to database
-function createProduct($imgPath) {
-    echo $imgPath;
+// Saves product to database using prepared statements
+function createProduct($prodname, $prodtags, $proddesc, $imgPath) {
+    $user = $_SESSION["userid"];
+    $sql = "INSERT INTO products(prod_name, prod_tags, prod_desc, prod_user, img_path) VALUES (?, ?, ?, ?, ?)"
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $sql)) {
+        header("Location: ../create-product.php?createprod=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "sssss", $prodname, $prodtags,$proddesc,$user, $imgPath);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("Location: ../login.php?createprod=success");
+    exit();
 }
 
 function loginUser($conn, $user, $password) {

@@ -25,21 +25,22 @@ if (isset($_POST["submit"])) {
                 $uniqueName = uniqid('', true).".".$fileActualExt;
                 $fileDestination = '../uploads/'.$uniqueName;
                 move_uploaded_file($fileTmpName, $fileDestination);
-                createProduct($fileDestination);
+
+                $name = mysqli_real_escape_string($conn, $_POST['prodName']) ;
+                $tags = mysqli_real_escape_string($conn, $_POST['tags']);
+                $description = mysqli_real_escape_string($conn, $_POST['prodDesc']);
+
+                createProduct($name, $tags, $description,$fileDestination);
                 header("Location: ../index.php?product-created&$fileDestination");
             }
         } else {
-            echo "There was an error uploading your file.";
+            echo "<p class='error'>There was an error uploading your file</p>";
         }
     } else {
-        echo "Incorrect file type";
+        echo "<p class='error'>Incorrect file type</p>";
     }
 
-    $name = mysqli_real_escape_string($conn, $_POST['prodName']) ;
-    $tags = mysqli_real_escape_string($conn, $_POST['tags']);
-    $description = mysqli_real_escape_string($conn, $_POST['prodDesc']);
-    
 
-    echo $fileTmpName;
+    
 }
 ?>
