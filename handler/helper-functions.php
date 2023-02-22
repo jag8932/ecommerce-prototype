@@ -45,7 +45,8 @@ function createUser($conn, $first, $last,$username, $email, $pwd) {
     }
 
 // Saves product to database using prepared statements
-function createProduct($prodname, $prodtags, $proddesc, $imgPath) {
+function createProduct($conn, $prodname, $prodtags, $proddesc, $imgPath) {
+    session_start();
     $user = $_SESSION["userid"];
     $sql = "INSERT INTO products(prod_name, prod_tags, prod_desc, prod_user, img_path) VALUES (?, ?, ?, ?, ?)";
     $stmt = mysqli_stmt_init($conn);

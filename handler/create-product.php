@@ -30,7 +30,7 @@ if (isset($_POST["submit"])) {
                 $tags = mysqli_real_escape_string($conn, $_POST['tags']);
                 $description = mysqli_real_escape_string($conn, $_POST['prodDesc']);
 
-                createProduct($name, $tags, $description,$fileDestination);
+                createProduct($conn, $name, $tags, $description,$fileDestination);
                 header("Location: ../index.php?product-created&$fileDestination");
             }
         } else {
