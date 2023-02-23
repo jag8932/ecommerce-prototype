@@ -26,8 +26,8 @@
     }
     ?>
     <div class='spacer'></div>
-    <form id='search'>
-        <input class='searchbar' type='text'>
+    <form id='search' method='POST' action='/handler/search-product.php'>
+        <input class='searchbar' type='text' name="input">
         <button class='submitButton' type='submit'>Search</button>
     </form>
     <div class='spacer'></div>
