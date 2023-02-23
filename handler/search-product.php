@@ -4,9 +4,12 @@ include_once './database-handler.php';
 if (isset($_POST["submit"])) {
     $searchInput = $_POST["input"];
     if (searchFor($searchInput)) {
-        echo searchFor($searchInput);
+        header("Location: ../index.php?item=found");
+        exit();
     } else {
         echo '<p class="error">No items found</p>';
+        header("Location: ../index.php?item=notfound");
+        exit();
     }
 }
 
