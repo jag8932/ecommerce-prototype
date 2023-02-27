@@ -22,7 +22,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
     exit();
 }
 // Uses prepared statements for security
-mysqli_stmt_bind_param($stmt, "ss", $username, $email);
+mysqli_stmt_bind_param($stmt, "s", $input);
 mysqli_stmt_execute($stmt);
 
 $resultData = mysqli_stmt_get_result($stmt);
