@@ -8,7 +8,7 @@ if (isset($_POST["submit"])) {
     if (searchFor($conn, $searchInput)) {
         $testprod = $test["prod_desc"];
         echo $testprod;
-      //  header("Location: ../index.php?item=$testprod");
+        header("Location: ../index.php?item=$testprod");
         exit();
     } else {
         echo '<p class="error">No items found</p>';
