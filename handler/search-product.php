@@ -6,7 +6,7 @@ if (isset($_POST["submit"])) {
     $test = searchFor($conn, $searchInput);
 
     if (searchFor($conn, $searchInput)) {
-        $testprod = $test["prod_name"];
+        $testprod = $test["prod_desc"];
         header("Location: ../index.php?item=$testprod");
         exit();
     } else {
