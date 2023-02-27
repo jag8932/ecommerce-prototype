@@ -3,8 +3,10 @@ include_once './database-handler.php';
 
 if (isset($_POST["submit"])) {
     $searchInput = $_POST["input"];
+    $test = searchFor($conn, $searchInput);
+    
     if (searchFor($conn, $searchInput)) {
-        header("Location: ../index.php?item=found");
+        header("Location: ../index.php?item=$test");
         exit();
     } else {
         echo '<p class="error">No items found</p>';
