@@ -3,7 +3,7 @@ include_once './database-handler.php';
 
 if (isset($_POST["submit"])) {
     $searchInput = $_POST["input"];
-    if (searchFor($searchInput)) {
+    if (searchFor($conn, $searchInput)) {
         header("Location: ../index.php?item=found");
         exit();
     } else {
@@ -13,7 +13,7 @@ if (isset($_POST["submit"])) {
     }
 }
 
-function searchFor($input) {
+function searchFor($conn, $input) {
     $sql = "SELECT * FROM products WHERE prod_name = $input";
     $stmt = mysqli_stmt_init($conn);
 
