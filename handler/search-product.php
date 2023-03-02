@@ -6,10 +6,11 @@ if (isset($_POST["submit"])) {
     $test = searchFor($conn, $searchInput);
 
     if (searchFor($conn, $searchInput)) {
-        $testprod = $test["prod_desc"];
+        $testprod = $test;
         echo $testprod;
-        header("Location: ../index.php?item=$testprod");
-        exit();
+      //  header("Location: ../index.php?item=found");
+        header('Content-Type: application/json');
+        echo json_encode($testprod);
     } else {
         echo '<p class="error">No items found</p>';
         header("Location: ../index.php?item=notfound");
