@@ -34,7 +34,15 @@
     <div class='spacer'></div>
     <a href="./create-product.php">Create Product</a>
     <a href='./signup.php'>Signup</a>
-    <a href='./login.php'>Login</a>
+    <?php 
+        session_start();
+        if (!isset($_SESSION["uid"])) {
+            echo "<a href='./login.php'>Sign In</a>";
+        } else {
+            echo "<a href='./logout.php>Sign Out</a>";
+        }
+    ?>
+    
 </nav>
 </div>
 

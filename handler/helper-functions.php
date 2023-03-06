@@ -82,7 +82,7 @@ function loginUser($conn, $user, $password) {
         $_SESSION["firstname"] = $userExists["user_first"]; 
         $_SESSION["lastname"] = $userExists["user_id"];
         $name = $_SESSION["firstname"];
-        header("Location:../header.php");
+       // header("Location:../header.php");
         header("Location:../index.php?name=$name");
         exit();
     }
