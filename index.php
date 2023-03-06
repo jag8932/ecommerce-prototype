@@ -2,7 +2,9 @@
 <?php 
 include './header.php';
 
-if (isset($_GET[""]))
+if (isset($_GET[""])) {
+    
+}
 ?>
 
 <h1>To Come Soon!</h1>
