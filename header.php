@@ -33,7 +33,6 @@
     <div class='spacer'></div>
     <div class='spacer'></div>
     <?php
-    if (session_status() === PHP_SESSION_ACTIVE){
         if (isset($_SESSION["userid"])) {
             echo "<a href='./create-product.php'>Create Product</a>
                   <a href='./logout.php'>Sign Out</a>";
@@ -41,11 +40,6 @@
             echo "<a href='./signup.php'>Signup</a>
                   <a href='./login.php'>Sign In</a>";
         } 
-    } else {
-        echo "<a href='./signup.php'>Signup</a>
-        <a href='./login.php'>Sign In</a>";
-    }
-
     ?>
 </nav>
 </div>
