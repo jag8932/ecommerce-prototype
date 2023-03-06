@@ -2,13 +2,19 @@
 include_once './database-handler.php';
 
 if (isset($_POST["submit"])) {
+    $searchInput = $_POST["input"]; 
+    header("Location: ../index.php?search=$searchInput");
+    exit();
+}
+/*
+if (isset($_POST["submit"])) {
     $searchInput = $_POST["input"];
     $test = searchFor($conn, $searchInput);
 
     if (searchFor($conn, $searchInput)) {
         $testprod = $test;
         echo $testprod;
-      //  header("Location: ../index.php?item=found");
+        header("Location: ../index.php?item=found");
         header('Content-Type: application/json');
         echo json_encode($testprod);
     } else {
@@ -39,5 +45,8 @@ if ($row = mysqli_fetch_assoc($resultData)) {
    return $result; 
 }
 mysqli_stmt_close($stmt);
-}
+} */
 ?>
+
+
+<script src="../js/products.js"></script>
