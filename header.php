@@ -35,6 +35,7 @@
     <a href="./create-product.php">Create Product</a>
     <a href='./signup.php'>Signup</a>
     <?php 
+    session_start();
         if (isset($_SESSION["userid"])) {
             echo "<a href='./logout.php'>Sign Out</a>";
         } else {
