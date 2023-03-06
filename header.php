@@ -32,8 +32,6 @@
     </form>
     <div class='spacer'></div>
     <div class='spacer'></div>
-    
-    
     <?php
         if (isset($_SESSION["userid"])) {
             echo "<a href='./create-product.php'>Create Product</a>
