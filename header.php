@@ -32,13 +32,15 @@
     </form>
     <div class='spacer'></div>
     <div class='spacer'></div>
-    <a href="./create-product.php">Create Product</a>
-    <a href='./signup.php'>Signup</a>
+    
+    
     <?php
         if (isset($_SESSION["userid"])) {
-            echo "<a href='./logout.php'>Sign Out</a>";
+            echo "<a href='./create-product.php'>Create Product</a>
+                  <a href='./logout.php'>Sign Out</a>";
         } else {
-            echo "<a href='./login.php'>Sign In</a>";
+            echo "<a href='./signup.php'>Signup</a>
+                  <a href='./login.php'>Sign In</a>";
         } 
     ?>
 </nav>
