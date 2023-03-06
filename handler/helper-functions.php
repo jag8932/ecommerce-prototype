@@ -90,7 +90,7 @@ function loginUser($conn, $user, $password) {
 
 // destroy session and remove user info from variables
 function logout() {
-    session_unset();
+  //  session_unset();
     session_destroy();
     header("Location:../index.php");
     exit();
