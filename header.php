@@ -24,12 +24,6 @@
     } else {
         echo "<div class='spacer'></div>";
     }
-
-    if (isset($_SESSION["userid"])) {
-        echo "<a href='./logout.php'>Sign Out</a>";
-    } else {
-        echo "<a href='./login.php'>Sign In</a>";
-    } 
     ?>
     <div class='spacer'></div>
     <form id='search' method='POST' action='./handler/search-product.php'>
@@ -40,6 +34,13 @@
     <div class='spacer'></div>
     <a href="./create-product.php">Create Product</a>
     <a href='./signup.php'>Signup</a>
+    <?php
+        if (isset($_SESSION["userid"])) {
+            echo "<a href='./logout.php'>Sign Out</a>";
+        } else {
+            echo "<a href='./login.php'>Sign In</a>";
+        } 
+    ?>
 </nav>
 </div>
 
