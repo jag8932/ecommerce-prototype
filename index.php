@@ -5,12 +5,12 @@ include './handler/helper-functions.php';
 include './handler/database-handler.php';
 if (isset($_GET["search"])) {
     $product = $_GET["search"];
-    $results = searchFor($conn, $product);
-
-   echo json_encode($results);
+    $results->products = searchFor($conn, $product);
+    $resultsJSON = json_encode($results);
+   echo $resultsJSON;
 }
 ?>
-
+<script src="./js/products.js"></script>
 <h1>To Come Soon!</h1>
 <template class="product-template">
     <h2 class="product-name"><h2>
@@ -22,4 +22,3 @@ if (isset($_GET["search"])) {
 // Will act as the main search page for products like how Amazon's home page looks. 
 include './footer.php';
 ?>
-<script src="./js/products.js"></script>
