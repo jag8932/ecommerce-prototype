@@ -7,11 +7,16 @@ if (isset($_GET["search"])) {
     $product = $_GET["search"];
     $results->products = searchFor($conn, $product);
     $resultsJSON = json_encode($results);
+
+    header('Content-Type: application/json');
    echo $resultsJSON;
 }
+
 ?>
-<script src="./js/products.js"></script>
+
 <h1>To Come Soon!</h1>
+<script src="./js/products.js"></script>
+
 <template class="product-template">
     <h2 class="product-name"><h2>
     <img src="" class="product-image" width="100px"/>

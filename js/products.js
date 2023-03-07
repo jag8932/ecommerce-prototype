@@ -1,6 +1,6 @@
 //const search = document.querySelector(".searchbar");
 
- fetch(`../index.php?search=test`)
+ fetch(`../index.php`)
  .then(response => response.json())
  .then(data => {
     console.log(data); 
