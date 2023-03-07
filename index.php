@@ -5,7 +5,9 @@ include './handler/helper-functions.php';
 include './handler/database-handler.php';
 if (isset($_GET["search"])) {
     $product = $_GET["search"];
-   echo searchFor($conn, $product);
+    $results = searchFor($conn, $product);
+
+   echo json_encode($results);
 }
 ?>
 
