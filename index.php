@@ -12,7 +12,7 @@ if (isset($_GET["search"])) {
         exit();
     }
 
-    $resultsJSON = json_encode($results);
+    $resultsJSON = json_encode($results["prod_name"]);
 
     header('Content-Type: application/json');
     echo $resultsJSON; 
