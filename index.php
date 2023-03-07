@@ -1,10 +1,11 @@
 
 <?php 
 include './header.php';
-
+include './handler/helper-functions.php';
+include './handler/database-handler.php';
 if (isset($_GET["search"])) {
-    $test = $_GET["search"];
-    echo $test;
+    $product = $_GET["search"];
+   echo searchFor($conn, $product);
 }
 ?>
 
