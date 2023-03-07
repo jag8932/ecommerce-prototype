@@ -5,11 +5,13 @@ include './handler/helper-functions.php';
 include './handler/database-handler.php';
 if (isset($_GET["search"])) {
     $product = $_GET["search"];
+    /*
     $results->products = searchFor($conn, $product);
     $resultsJSON = json_encode($results);
 
     header('Content-Type: application/json');
-   echo $resultsJSON;
+   echo $resultsJSON; */
+   echo $product;
 }
 
 ?>
