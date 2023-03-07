@@ -5,19 +5,23 @@ include './handler/helper-functions.php';
 include './handler/database-handler.php';
 if (isset($_GET["search"])) {
     $product = $_GET["search"];
-    /*
-    $results->products = searchFor($conn, $product);
+    
+    $results = searchFor($conn, $product);
+    if(!$results) {
+        echo "<p class='error'>No results found</p>";
+        exit();
+    }
+
     $resultsJSON = json_encode($results);
 
     header('Content-Type: application/json');
-   echo $resultsJSON; */
-   echo $product;
+    echo $resultsJSON; 
 }
 
 ?>
+<script src="./js/products.js"></script>
 
 <h1>To Come Soon!</h1>
-<script src="./js/products.js"></script>
 
 <template class="product-template">
     <h2 class="product-name"><h2>
