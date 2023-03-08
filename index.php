@@ -14,7 +14,7 @@ if (isset($_GET["search"])) {
     echo "<div class='product-container'>";
     for ($i = 0; $i < count($results); $i++) {
         echo "<div class='product'>";
-        echo $results[$i];
+        echo json_encode($results[$i]);
         echo count($results[i]);
         foreach($results[$i] as $product) {
             
