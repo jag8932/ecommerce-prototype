@@ -14,10 +14,11 @@ if (isset($_GET["search"])) {
     echo "<div class='product-container'>";
     for ($i = 0; $i < count($results); $i++) {
         echo "<div class='product'>";
+        echo $results[$i];
         foreach($results[$i] as $product) {
-            echo $product[1];
+            
            // echo "<p>$product</p>";
-            echo "<br>";
+          //  echo "<br>";
         }
         echo "</div>";
     }
