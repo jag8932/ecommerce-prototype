@@ -27,6 +27,12 @@ input {
     text-align: center;
 }
 
+.product-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    vertical-align: middle;
+}
 .error {
     text-align: center;
     font-size: 25px;
