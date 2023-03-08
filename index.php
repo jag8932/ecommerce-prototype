@@ -20,6 +20,7 @@ if (isset($_GET["search"])) {
         $prodTags = $results[$i]["prod_tags"];
         $prodDesc = $results[$i]["prod_desc"];
         
+        echo $imgUrl;
         echo "<img class='prod-img' src='$imgUrl' width='200' alt='img'><br>";
         echo "<h2 class='prod-name'>$prodName</h2><br>";
         echo "<p>$prodTags</p><br>";
