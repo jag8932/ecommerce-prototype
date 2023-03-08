@@ -10,12 +10,15 @@ if (isset($_GET["search"])) {
         echo "<p class='error'>No results found</p>";
         exit();
     }
-
+    echo "<h1>Results</h1>";
     echo "<div class='product-container'>";
     for ($i = 0; $i < count($results); $i++) {
+        echo "<div class='product'>";
         foreach($results[$i] as $product) {
             echo $product;
+            echo "<br>";
         }
+        echo "</div>";
     }
     echo "</div>";
   //  echo json_encode($results[0]);
@@ -29,8 +32,6 @@ if (isset($_GET["search"])) {
 }
 
 ?>
-
-<h1>To Come Soon!</h1>
 
 <template class="product-template">
     <h2 class="product-name"><h2>
