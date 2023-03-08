@@ -106,17 +106,7 @@ while($row = mysqli_fetch_assoc($resultData)) {
     $prods[] = $row;
 }
 return $prods;
-/*
-if ($row = mysqli_fetch_assoc($resultData)) {
-    $prods = [];
-    while($row = mysql_fetch_assoc($resultData)) {
-        $prods[] = $row;
-    }
-    return $prods;
-} else {
-   $result = false;
-   return $result; 
-} */
+
 mysqli_stmt_close($stmt);
 }
 

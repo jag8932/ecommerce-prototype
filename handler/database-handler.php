@@ -22,3 +22,4 @@ $name = "loginsystem";
 
 $conn = mysqli_connect($serverName, $username, $password, $name);
 */
+?>
