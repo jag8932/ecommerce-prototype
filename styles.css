@@ -37,6 +37,7 @@ input {
     width: 200px;
     height: 500px;
     border: 1px solid black;
+    padding: 15px;
 }
 .error {
     text-align: center;
