@@ -10,7 +10,10 @@ if (isset($_GET["search"])) {
         echo "<p class='error'>No results found</p>";
         exit();
     }
-    echo json_encode($results);
+    foreach($results as $val) {
+        echo "<li>$val</li>";
+    }
+   // echo json_encode($results);
   //  $resultsJSON = json_encode($results["prod_name"]);
 
 }
