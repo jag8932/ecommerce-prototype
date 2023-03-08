@@ -11,8 +11,12 @@ if (isset($_GET["search"])) {
         exit();
     }
     echo "<div class='product-container'>";
-    foreach($results as $prod) {
-        echo "<h2>$prod</h2>";
+    for ($i = 0; $i < count($results); $i++) {
+        echo "<div class='product'>";
+        for ($k = 0; $k < count($results[$i]); $k++) {
+            echo $results[$i][$k];
+        }
+        echo "</div>";
     }
     echo "</div>";
     echo json_encode($results);
