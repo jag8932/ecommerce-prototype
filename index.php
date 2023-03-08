@@ -15,20 +15,18 @@ if (isset($_GET["search"])) {
     for ($i = 0; $i < count($results); $i++) {
         echo "<div class='product'>";
         $imgUrl = $results[$i]["img_path"];
-        echo $imgUrl;
-        echo $results[$i]["prod_name"];
-
+        $prodName = $results[$i]["prod_name"];
+        $prodUser = $results[$i]["prod_user"];
+        $prodTags = $results[$i]["prod_tags"];
+        $prodDesc = $results[$i]["prod_desc"];
         
+        echo "<img class='prod-img' src='$imgUrl' width='200' height='300' alt='img'><br>";
+        echo "<h2 class='prod-name'>$prodName</h2><br>";
+        echo "<p>$prodTags</p><br>";
+        echo "<p>$prodDesc</p><br>"
         echo "</div>";
     }
     echo "</div>";
-  //  echo json_encode($results[0]);
-  //  echo "<br>";
-  //  echo json_encode($results[1]);
-    
-    
-   // echo json_encode($results);
-  //  $resultsJSON = json_encode($results["prod_name"]);
 
 }
 
