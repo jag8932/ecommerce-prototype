@@ -14,13 +14,11 @@ if (isset($_GET["search"])) {
     echo "<div class='product-container'>";
     for ($i = 0; $i < count($results); $i++) {
         echo "<div class='product'>";
+        $imgUrl = $results[$i]["img_path"];
+        echo $imgUrl;
         echo $results[$i]["prod_name"];
-        echo json_encode($results[$i]["prod_name"]);
-        foreach($results[$i] as $product) {
-            
-          echo "<p>$product</p>";
-          //  echo "<br>";
-        }
+
+        
         echo "</div>";
     }
     echo "</div>";
