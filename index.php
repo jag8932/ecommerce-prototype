@@ -4,18 +4,24 @@ include './header.php';
 include './handler/helper-functions.php';
 include './handler/database-handler.php';
 if (isset($_GET["search"])) {
-    $product = $_GET["search"];
-    $results = searchFor($conn, $product);
+    $search = $_GET["search"];
+    $results = searchFor($conn, $search);
     if(!$results) {
         echo "<p class='error'>No results found</p>";
         exit();
     }
 
     echo "<div class='product-container'>";
-    echo json_encode($results[0]);
-    echo "<br>";
-    echo json_encode($results[1]);
+    for ($i = 0; $i < count($results); $i++) {
+        foreach($results[$i] as $product) {
+            echo $product;
+        }
+    }
     echo "</div>";
+  //  echo json_encode($results[0]);
+  //  echo "<br>";
+  //  echo json_encode($results[1]);
+    
     
    // echo json_encode($results);
   //  $resultsJSON = json_encode($results["prod_name"]);
