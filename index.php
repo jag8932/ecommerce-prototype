@@ -23,7 +23,7 @@ if (isset($_GET["search"])) {
         echo "<img class='prod-img' src='$imgUrl' width='200' height='300' alt='img'><br>";
         echo "<h2 class='prod-name'>$prodName</h2><br>";
         echo "<p>$prodTags</p><br>";
-        echo "<p>$prodDesc</p><br>"
+        echo "<p>$prodDesc</p><br>";
         echo "</div>";
     }
     echo "</div>";
