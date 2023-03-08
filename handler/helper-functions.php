@@ -89,7 +89,7 @@ function loginUser($conn, $user, $password) {
 }
 
 function searchFor($conn, $input) {
-    $sql = "SELECT * FROM products WHERE prod_name = ?;";
+    $sql = "SELECT * FROM products WHERE prod_name LIKE ?;";
     $stmt = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmt, $sql)) {
