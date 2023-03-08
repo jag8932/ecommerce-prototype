@@ -58,7 +58,6 @@ function createProduct($conn, $prodname, $prodtags, $proddesc, $imgPath) {
     mysqli_stmt_bind_param($stmt, "sssss", $prodname, $prodtags,$proddesc,$user, $imgPath);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("Location: ../login.php?createprod=success");
     exit();
 }
 
