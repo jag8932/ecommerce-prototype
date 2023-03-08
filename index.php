@@ -21,7 +21,8 @@ if (isset($_GET["search"])) {
         $prodDesc = $results[$i]["prod_desc"];
         
         echo $imgUrl;
-        echo "<img class='prod-img' src='/uploads/640806b5bd84d5.80774967.jpg' width='200' alt='img'><br>";
+        
+        echo "<img class='prod-img' src='uploads/640806b5bd84d5.80774967.jpg' width='200px' alt='img'><br>";
         echo "<h2 class='prod-name'>$prodName</h2><br>";
         echo "<p>$prodTags</p><br>";
         echo "<p>$prodDesc</p><br>";
