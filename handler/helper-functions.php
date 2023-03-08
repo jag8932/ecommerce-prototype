@@ -101,15 +101,11 @@ mysqli_stmt_bind_param($stmt, "s", $input);
 mysqli_stmt_execute($stmt);
 
 $resultData = mysqli_stmt_get_result($stmt);
-$prods = [];
+$prods = array();
 while($row = mysqli_fetch_assoc($resultData)) {
-    $prods[] = $row;
+    $prods[] = $row[1];
 }
-if ($prods.count() > 0) {
-    return $prods;
-} else {
-    return false;
-}
+return $prods;
 /*
 if ($row = mysqli_fetch_assoc($resultData)) {
     $prods = [];
