@@ -103,7 +103,11 @@ mysqli_stmt_execute($stmt);
 $resultData = mysqli_stmt_get_result($stmt);
 
 if ($row = mysqli_fetch_assoc($resultData)) {
-    return $row;
+    $prods = [];
+    while($row = mysql_fetch_assoc($resultData)) {
+        $prods[] = $row;
+    }
+    return $prods;
 } else {
    $result = false;
    return $result; 
