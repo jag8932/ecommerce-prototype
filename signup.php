@@ -71,7 +71,6 @@ include './header.php';
             echo "<p class='error'>Username or email already taken.</p>";
         }
     }
+
+    include './footer.php';
     ?>
-<?php 
-include './footer.php';
-?>
