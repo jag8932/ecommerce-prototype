@@ -128,8 +128,8 @@ nav {
 }
 /* Footer */
 footer {
-    position:absolute;
-    bottom:0px;
+   /* position:absolute;
+    bottom:0px; */
     width: 100%;
     background-color: gray;
     color: white;
