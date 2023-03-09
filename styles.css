@@ -8,6 +8,10 @@ body {
     color: #192A3D;
 }
 
+#main-content {
+    padding-left: 20%;
+    padding-right: 20%;
+}
 p {
     overflow: hidden;
 }
