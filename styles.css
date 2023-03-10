@@ -43,6 +43,7 @@ input {
 .product-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     vertical-align: middle;
 }
@@ -51,6 +52,7 @@ input {
     height: 500px;
     border: 1px solid black;
     padding: 15px;
+    margin: 30px;
     scroll-behavior: auto;
 }
 .error {
