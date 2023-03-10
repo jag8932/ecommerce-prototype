@@ -23,7 +23,7 @@ if (isset($_POST["submit"])) {
                 //gives the file a unique name so it doesn't conflict with files 
                 // of the same name
                 $uniqueName = uniqid('', true).".".$fileActualExt;
-                $fileDestination = './uploads/'.$uniqueName;
+                $fileDestination = '../uploads/'.$uniqueName;
                 move_uploaded_file($fileTmpName, $fileDestination);
 
                 $name = mysqli_real_escape_string($conn, $_POST['prodName']) ;
